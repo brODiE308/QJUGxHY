@@ -10,7 +10,6 @@
 **/.vscode
 **/*.*proj.user
 **/*.dbmdl
-**/*.jfm
 **/azds.yaml
 **/charts
 **/docker-compose*
