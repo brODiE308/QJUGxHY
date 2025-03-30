@@ -15,7 +15,6 @@
 *.json          text
 *.jelly         text
 *.jellytag      text
-*.properties    text
 *.rb            text
 *.sh            text
 *.txt           text
