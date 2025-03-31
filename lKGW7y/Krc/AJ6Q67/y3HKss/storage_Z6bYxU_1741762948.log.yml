@@ -1,3 +1,0 @@
-extraction:
-    index:
-      build_command: make static_lib
