@@ -19,7 +19,6 @@ linters:
 linters-settings:
   gocritic:
     disabled-checks:
-      - ifElseChain
   revive:
     rules:
       - name: error-strings
