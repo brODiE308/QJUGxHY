@@ -9,7 +9,6 @@
 .env/
 .git/
 .pytest_cache/
-.tox/
 .venv/
 .venv_client/
 .vscode/
