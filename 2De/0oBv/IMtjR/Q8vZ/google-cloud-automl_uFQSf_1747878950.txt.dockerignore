@@ -10,7 +10,6 @@
 .git/
 .pytest_cache/
 .venv/
-.venv_client/
 .vscode/
 build/
 deploy/
