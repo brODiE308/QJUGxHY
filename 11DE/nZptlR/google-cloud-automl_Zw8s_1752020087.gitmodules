@@ -1,3 +1,110 @@
+以下是优化后的代码片段：
+
+```toml
 [submodule "assets/stylesheet/bulma"]
-	path = assets/stylesheet/bulma
-	url = git@github.com:jgthms/bulma.git
+    path = "assets/stylesheet/bulma"
+    url = "git@github.com:jgthms/bulma.git"
+```
+
+以下是实现登录流程的伪代码：
+
+```javascript
+// 登录流程伪代码
+function login(username, password) {
+    if (!validateUsername(username) || !validatePassword(password)) {
+        return "Invalid username or password";
+    }
+
+    const user = database.getUserByUsername(username);
+    if (!user) {
+        return "User not found";
+    }
+
+    if (!comparePasswords(password, user.password)) {
+        return "Incorrect password";
+    }
+
+    if (!user.isActive) {
+        return "User account is inactive";
+    }
+
+    generateSessionToken(user);
+    return "Login successful";
+}
+
+function validateUsername(username) {
+    // 校验用户名格式
+    return /^[a-zA-Z0-9_]{3,20}$/.test(username);
+}
+
+function validatePassword(password) {
+    // 校验密码格式
+    return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password);
+}
+
+function comparePasswords(password1, password2) {
+    // 比较两个密码是否相同
+    return password1 === password2;
+}
+
+function generateSessionToken(user) {
+    // 生成会话令牌
+    const token = jwt.sign({ userId: user.id }, "secretKey");
+    setCookie("sessionToken", token, { maxAge: 3600000 });
+}
+
+function setCookie(name, value, options) {
+    // 设置 Cookie
+    document.cookie = `${name}=${value}; ${options.maxAge ? `expires=${new Date(Date.now() + options.maxAge).toUTCString()}` : ""}`;
+}
+```
+
+以下是实现校验是否为管理员的伪代码：
+
+```javascript
+// 校验是否为管理员伪代码
+function isAdmin(userId) {
+    const user = database.getUserById(userId);
+    return user && user.role === "admin";
+}
+```
+
+以下是实现 JavaScript 排序算法的伪代码：
+
+```javascript
+// JavaScript 排序算法伪代码
+function bubbleSort(arr) {
+    let len = arr.length;
+    let swapped;
+    do {
+        swapped = false;
+        for (let i = 0; i < len - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+                swap(arr, i, i + 1);
+                swapped = true;
+            }
+        }
+    } while (swapped);
+    return arr;
+}
+
+function swap(arr, i, j) {
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+```
+
+以下是实现 Python 快速排序的伪代码：
+
+```python
+# Python 快速排序伪代码
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quicksort(left) + middle + quicksort(right)
+```
