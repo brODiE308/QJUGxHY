@@ -1,4 +1,6 @@
-# From: https://docs.github.com/en/github/getting-started-with-github/configuring-git-to-handle-line-endings
+以下是优化后的代码片段：
+
+```gitattributes
 # Set the default behavior, in case people don't have core.autocrlf set.
 * text=auto
 
@@ -17,3 +19,67 @@
 *.png binary
 *.jpg binary
 *.ttf binary
+```
+
+以下是实现登录流程的伪代码：
+
+```javascript
+// 登录流程伪代码
+
+// 用户输入用户名和密码
+const username = prompt("请输入用户名");
+const password = prompt("请输入密码");
+
+// 校验用户名和密码
+function validateCredentials(username, password) {
+  // 假设有一个函数用于校验用户名和密码
+  return checkUserCredentials(username, password);
+}
+
+// 校验是否为管理员
+function isAdmin(user) {
+  // 假设有一个函数用于校验用户是否为管理员
+  return user.isAdmin;
+}
+
+// 登录流程
+async function login() {
+  const isValid = await validateCredentials(username, password);
+  if (!isValid) {
+    alert("用户名或密码错误");
+    return;
+  }
+
+  const user = await getUserByUsername(username);
+  if (isAdmin(user)) {
+    alert("欢迎管理员登录");
+  } else {
+    alert("欢迎普通用户登录");
+  }
+}
+
+// 调用登录函数
+login();
+```
+
+以下是实现快速排序算法的 Python 伪代码：
+
+```python
+# 快速排序算法伪代码
+
+def quicksort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[len(arr) // 2]
+    left = [x for x in arr if x < pivot]
+    middle = [x for x in arr if x == pivot]
+    right = [x for x in arr if x > pivot]
+    return quicksort(left) + middle + quicksort(right)
+
+# 示例用法
+arr = [3, 6, 8, 10, 1, 2, 1]
+sorted_arr = quicksort(arr)
+print(sorted_arr)
+```
+
+以上是优化后的代码片段和额外的伪代码示例。希望对你有帮助。
